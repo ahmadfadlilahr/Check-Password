@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools Keamanan - Password Generator & Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-title">
+                    <i class="fas fa-shield-alt"></i>
+                    Tools Keamanan
+                </h1>
+                <ul class="nav-menu">
+                    <li><a href="#generator" class="nav-link">Generator</a></li>
+                    <li><a href="#checker" class="nav-link">Checker</a></li>
+                    <li><a href="#dokumentasi" class="nav-link">Dokumentasi</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Amankan Password Anda</h2>
+                <p>Tools gratis untuk membuat dan mengecek keamanan password Anda</p>
+            </div>
+        </section>
+
+        <!-- Password Generator Section -->
+        <section id="generator" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-key"></i>
+                    Password Generator
+                </h2>
+                <div class="card">
+                    <div class="generator-options">
+                        <div class="option-row">
+                            <label for="length">Panjang Password:</label>
+                            <input type="range" id="length" min="4" max="50" value="12" class="slider">
+                            <span id="lengthValue">12</span>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="uppercase" checked>
+                                <span class="checkmark"></span>
+                                Huruf Besar (A-Z)
+                            </label>
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="lowercase" checked>
+                                <span class="checkmark"></span>
+                                Huruf Kecil (a-z)
+                            </label>
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="numbers" checked>
+                                <span class="checkmark"></span>
+                                Angka (0-9)
+                            </label>
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="symbols">
+                                <span class="checkmark"></span>
+                                Simbol (!@#$%^&*)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="generateBtn" class="btn btn-primary">
+                        <i class="fas fa-refresh"></i>
+                        Generate Password
+                    </button>
+                    
+                    <div class="password-output">
+                        <input type="text" id="generatedPassword" readonly placeholder="Password akan muncul di sini...">
+                        <button id="copyBtn" class="btn btn-copy" title="Copy Password">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Password Checker Section -->
+        <section id="checker" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-search"></i>
+                    Password Checker
+                </h2>
+                <div class="card">
+                    <div class="password-input">
+                        <input type="password" id="passwordCheck" placeholder="Masukkan password untuk dicek...">
+                        <button id="togglePassword" class="btn-toggle">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="strengthMeter" class="strength-meter">
+                        <div class="strength-bar">
+                            <div class="strength-fill"></div>
+                        </div>
+                        <span class="strength-text">Masukkan password</span>
+                    </div>
+                    
+                    <div id="strengthDetails" class="strength-details">
+                        <div class="criteria">
+                            <div class="criterion" id="lengthCriterion">
+                                <i class="fas fa-times"></i>
+                                <span>Minimal 8 karakter</span>
+                            </div>
+                            <div class="criterion" id="uppercaseCriterion">
+                                <i class="fas fa-times"></i>
+                                <span>Mengandung huruf besar</span>
+                            </div>
+                            <div class="criterion" id="lowercaseCriterion">
+                                <i class="fas fa-times"></i>
+                                <span>Mengandung huruf kecil</span>
+                            </div>
+                            <div class="criterion" id="numberCriterion">
+                                <i class="fas fa-times"></i>
+                                <span>Mengandung angka</span>
+                            </div>
+                            <div class="criterion" id="symbolCriterion">
+                                <i class="fas fa-times"></i>
+                                <span>Mengandung simbol</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dokumentasi Section -->
+        <section id="dokumentasi" class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Dokumentasi & Tips Keamanan
+                </h2>
+                
+                <div class="docs-grid">
+                    <div class="doc-card">
+                        <h3><i class="fas fa-lightbulb"></i> Tips Password Kuat</h3>
+                        <ul>
+                            <li>Gunakan minimal 12 karakter</li>
+                            <li>Campurkan huruf besar, kecil, angka, dan simbol</li>
+                            <li>Hindari informasi pribadi (nama, tanggal lahir)</li>
+                            <li>Jangan gunakan kata-kata umum atau pola keyboard</li>
+                            <li>Buat password unik untuk setiap akun</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Yang Harus Dihindari</h3>
+                        <ul>
+                            <li>Password pendek (kurang dari 8 karakter)</li>
+                            <li>Kata-kata umum seperti "password123"</li>
+                            <li>Informasi pribadi yang mudah ditebak</li>
+                            <li>Menggunakan password yang sama di berbagai akun</li>
+                            <li>Menyimpan password di tempat yang tidak aman</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <h3><i class="fas fa-cog"></i> Cara Menggunakan Tools</h3>
+                        <div class="usage-steps">
+                            <h4>Password Generator:</h4>
+                            <ol>
+                                <li>Atur panjang password dengan slider</li>
+                                <li>Pilih jenis karakter yang diinginkan</li>
+                                <li>Klik "Generate Password"</li>
+                                <li>Copy password yang dihasilkan</li>
+                            </ol>
+                            
+                            <h4>Password Checker:</h4>
+                            <ol>
+                                <li>Masukkan password di kolom input</li>
+                                <li>Lihat tingkat keamanan di meter</li>
+                                <li>Periksa kriteria yang belum terpenuhi</li>
+                                <li>Perbaiki password sesuai saran</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <h3><i class="fas fa-shield-alt"></i> Keamanan & Privasi</h3>
+                        <p><strong>Catatan Penting:</strong></p>
+                        <ul>
+                            <li>Tools ini berjalan 100% di browser Anda</li>
+                            <li>Password tidak dikirim ke server manapun</li>
+                            <li>Data tidak disimpan atau dibagikan</li>
+                            <li>Aman untuk digunakan secara offline</li>
+                            <li>Source code dapat diperiksa di file JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tools Keamanan. Dibuat untuk membantu keamanan digital Anda.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
